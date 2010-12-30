@@ -1,19 +1,10 @@
 <?
 
-  function utf16_convert($str) {
+  function utf16_convert($string) {
 
-    $str = preg_replace("@\\\u([0-9]{3,4})@", "&#x$1;", $str);
-    return $str;
+    $string = preg_replace("@\\\u([0-9]{3,4})@", "&#x$1;", $string);
+    return $string;
 
   }
-
-  error_reporting(E_ALL);
-  ini_set('display_errors',1);
-
-  $test = "Here\u2019s an apostrophe!";
-
-  $test = utf16_convert($test);
-  echo $test;
-
 
 ?>
